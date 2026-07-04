@@ -23,7 +23,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..700,0..1&display=swap"
           rel="stylesheet"
         />
-        {/* GA4 tag placeholder — replace G-XXXXXXXXXX with your Measurement ID */}
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-G9YPJ225NF');
+            `,
+          }}
+        />
       </head>
       <body className="bg-bg text-text font-body antialiased">
         <a href="#main" className="sr-only focus:not-sr-only">Skip to content</a>
