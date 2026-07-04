@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* Art direction: EatFresh -> organic, warm, community-driven farm-to-table brand
+   Palette: warm cream/beige neutrals, single deep green accent, gold for badges
+   Typography: Fraunces (display, warm editorial serif) + Satoshi (body, clean geometric sans)
+   Density: balanced, generous spacing, editorial rhythm */
+
+:root, [data-theme="light"] {
+  --color-bg: #f8f6ef;
+  --color-surface: #fbfaf5;
+  --color-surface-2: #fdfcf9;
+  --color-surface-offset: #f1eee3;
+  --color-surface-offset-2: #e9e4d4;
+  --color-divider: #ddd7c6;
+  --color-border: #d5cfba;
+
+  --color-text: #22261d;
+  --color-text-muted: #625f52;
+  --color-text-faint: #a7a191;
+  --color-text-inverse: #f8f6ef;
+
+  --color-primary: #2f5233;
+  --color-primary-hover: #23401f;
+  --color-primary-active: #1a3316;
+  --color-primary-highlight: #d9e2c9;
+
+  --color-gold: #c68a1f;
+  --color-gold-hover: #a56e12;
+  --color-gold-highlight: #ece0c2;
+
+  --color-error: #a12c2c;
+  --color-success: #437a22;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px oklch(0.2 0.02 120 / 0.06);
+  --shadow-md: 0 4px 14px oklch(0.2 0.02 120 / 0.08);
+  --shadow-lg: 0 14px 36px oklch(0.2 0.02 120 / 0.14);
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Satoshi', 'Inter', sans-serif;
+}
+
+[data-theme="dark"] {
+  --color-bg: #14160f;
+  --color-surface: #191b13;
+  --color-surface-2: #1e2016;
+  --color-surface-offset: #1c1e15;
+  --color-surface-offset-2: #23261b;
+  --color-divider: #2a2d1f;
+  --color-border: #363a27;
+
+  --color-text: #e7e4d6;
+  --color-text-muted: #a4a08d;
+  --color-text-faint: #6f6c5c;
+  --color-text-inverse: #1a1c14;
+
+  --color-primary: #7fa876;
+  --color-primary-hover: #98c08d;
+  --color-primary-active: #b0d5a5;
+  --color-primary-highlight: #2a3626;
+
+  --color-gold: #e0ac47;
+  --color-gold-hover: #edc06c;
+  --color-gold-highlight: #3a3120;
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.3);
+  --shadow-md: 0 4px 14px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 14px 36px oklch(0 0 0 / 0.45);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+.container-default { max-width: 1200px; margin-inline: auto; padding-inline: 1.25rem; }
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 180ms ease, transform 180ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+
+.btn-ghost {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: var(--radius-full);
+  padding: 0.7rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+.btn-ghost:hover { background: var(--color-surface-offset); border-color: var(--color-primary); }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-highlight);
+  color: var(--color-primary);
+}
+.badge-gold { background: var(--color-gold-highlight); color: var(--color-gold); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
